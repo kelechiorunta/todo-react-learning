@@ -9,9 +9,10 @@ import {
   TextField
 } from '@radix-ui/themes';
 import taskReducer, { type Task } from './TodoReducer';
-import { useContext, useReducer, useState } from 'react';
+import { useReducer, useState } from 'react';
+// import { useContext } from 'react';
 import { TrashIcon } from '@radix-ui/react-icons';
-import { UserCtx } from '../UserContext/usercontext';
+// import { UserCtx } from '../UserContext/usercontext';
 
 const initialState: Task[] = [
   {
@@ -47,16 +48,16 @@ function Tasker({
 }
 export default function Todo() {
   // Since it is a hook, it must always be passed at the top of the child component
-  const username = useContext<string>(UserCtx);
+  // const username = useContext<string>(UserCtx);
   const [tasks, dispatch] = useReducer(taskReducer, initialState);
   const [todo, setTodo] = useState<Task>({ name: '', id: 0, task: '' });
 
   const [error, setError] = useState('');
 
-  const updateTask = () => {
-    /** Handling logic using useState setter functions **/
-    setTodo({ ...todo, name: 'Kelechi' });
-  };
+  // const updateTask = () => {
+  //   /** Handling logic using useState setter functions **/
+  //   setTodo({ ...todo, name: 'Kelechi' });
+  // };
 
   const addTask = (newtask: Task) => {
     try {
@@ -99,8 +100,8 @@ export default function Todo() {
     <Flex direction={'column'} gap={'2'} p={'2'} width={'90%'}>
       <Container p={'2'} width={'90%'}>
         <Heading>Todo List</Heading>
-        <Heading size={'3'}>{todo.name}</Heading>
-        <Heading size={'3'}>{username}</Heading>
+        {/* <Heading size={'3'}>{todo.name}</Heading> */}
+        {/* <Heading size={'3'}>{username}</Heading> */}
         <Flex direction={'column'} gap={'2'}>
           <Table.Root>
             <Table.Header>
@@ -153,9 +154,9 @@ export default function Todo() {
           <Button radius="small" onClick={() => editTask(todo)}>
             Edit Todo
           </Button>
-          <Button radius="small" onClick={() => updateTask()}>
+          {/* <Button radius="small" onClick={() => updateTask()}>
             UpdateTodoName
-          </Button>
+          </Button> */}
         </Flex>
       </Container>
     </Flex>
