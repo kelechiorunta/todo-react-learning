@@ -1,5 +1,6 @@
 
 import './App.css'
+import Profile from './components/Profile/Profile'
 import Todo from './components/Todo/Todo'
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 
   return (
     <>
-      <Todo/>
+      <Todo />
+      <Profile />
     </>
   )
 }
