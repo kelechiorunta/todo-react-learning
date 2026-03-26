@@ -14,14 +14,14 @@ function Clock(props: ClockProps) {
 }
 
 export default function Form() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
   // const [fullName, setFullName] = useState("");
   const [name, setName] = useState({
     firstName: "",
     lastName: ""
   })
-  const fullName = `${firstName} ${lastName}`;
+  const fullName = `${name.firstName} ${name.lastName}`;
 
   function handleFirstNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     //setFirstName(e.target.value);
@@ -40,10 +40,10 @@ export default function Form() {
       <Clock />
       <h2>Let’s check you in</h2>
       <label>
-        First name: <input value={firstName} onChange={handleFirstNameChange} />
+        First name: <input value={name.firstName} onChange={handleFirstNameChange} />
       </label>
       <label>
-        Last name: <input value={lastName} onChange={handleLastNameChange} />
+        Last name: <input value={name.lastName} onChange={handleLastNameChange} />
       </label>
       <p>
         Your ticket will be issued to: <b>{fullName}</b>
