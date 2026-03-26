@@ -8,23 +8,31 @@ interface ClockProps {
 }
 
 function Clock(props: ClockProps) {
-  const [color, setColor] = useState(props.color);
-  return <h1 style={{ color: color }}>{props.time}</h1>;
+  //const [color, setColor] = useState(props.color);
+  
+  return <h1 style={{ color: props.color }}>{props.time}</h1>;
 }
 
 export default function Form() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [fullName, setFullName] = useState("");
+  // const [fullName, setFullName] = useState("");
+  const [name, setName] = useState({
+    firstName: "",
+    lastName: ""
+  })
+  const fullName = `${firstName} ${lastName}`;
 
   function handleFirstNameChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setFirstName(e.target.value);
-    setFullName(e.target.value + " " + lastName);
+    //setFirstName(e.target.value);
+    //setFullName(e.target.value + " " + lastName);
+    setName({...name, firstName: e.target.value})
   }
 
   function handleLastNameChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setLastName(e.target.value);
-    setFullName(firstName + " " + e.target.value);
+    //setLastName(e.target.value);
+    setName({...name, lastName: e.target.value})
+    //setFullName(firstName + " " + e.target.value);
   }
 
   return (
