@@ -9,7 +9,7 @@ import TaskComponent from "./components/Counter/TaskComponent";
 function App() {
   return (
     <>
-      <TaskComponent/>
+      <TaskComponent />
       <Task2 />
       <Todo />
       <Profile />

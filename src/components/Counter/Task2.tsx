@@ -8,7 +8,7 @@ export default function Task2() {
 
   function add() {
     //
-    setAge(age => age + 1)
+    setAge((age) => age + 1);
   }
 
   return (
