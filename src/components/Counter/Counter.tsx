@@ -6,6 +6,7 @@ export default function Counter() {
 
   function handleClick() {
     setIndex(index + 1);
+    console.log(index);
   }
   return (
     <>
