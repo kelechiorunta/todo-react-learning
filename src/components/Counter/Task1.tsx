@@ -14,14 +14,16 @@ export default function Task1() {
 
   function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     //Update the name of the Person's state object variable using the spread syntax
-  }
+    setPerson({...person, name: e.target.value})
 
   function handleTitleChange(e: React.ChangeEvent<HTMLInputElement>) {
     //Update the title of the artwork object of the Person's state object variable using the spread syntax
+    setPerson({...person, artwork: {title: e.target.value}})
   }
 
   function handleCityChange(e: React.ChangeEvent<HTMLInputElement>) {
     //Update the city of the artwork object of the Person's state object variable using the spread syntax
+    setPerson({...person, artwork: {city: e.target.value}})
   }
 
   return (
