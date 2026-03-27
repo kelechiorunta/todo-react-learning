@@ -1,9 +1,9 @@
 // Please complete the task by updating the state properties
 // of the Person state object using useState hook
 
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function Task1() {
+export default function TaskComponent() {
   const [person, setPerson] = useState({
     name: "Niki de Saint Phalle",
     artwork: {
@@ -14,14 +14,16 @@ export default function Task1() {
 
   function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     //Update the name of the Person's state object variable using the spread syntax
-  }
+    setPerson({...person, name: e.target.value})
 
   function handleTitleChange(e: React.ChangeEvent<HTMLInputElement>) {
     //Update the title of the artwork object of the Person's state object variable using the spread syntax
+    setPerson({...person, artwork: {...person.artwork, title: e.target.value}})
   }
 
   function handleCityChange(e: React.ChangeEvent<HTMLInputElement>) {
     //Update the city of the artwork object of the Person's state object variable using the spread syntax
+    setPerson({...person, artwork: {...person.artwork, city: e.target.value}})
   }
 
   return (
@@ -47,4 +49,5 @@ export default function Task1() {
       </p>
     </>
   );
+}
 }

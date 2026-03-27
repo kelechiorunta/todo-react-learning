@@ -3,11 +3,12 @@
 
 import { useState } from "react";
 
-export default function CounterI() {
+export default function Task2() {
   const [age, setAge] = useState(42);
 
   function add() {
     //
+    setAge(age => age + 1)
   }
 
   return (
