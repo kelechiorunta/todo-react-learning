@@ -6,12 +6,14 @@ export default function Counter() {
 
   function handleClick() {
     setIndex(index + 1);
-    console.log(index);
+    // setIndex(index + 1);
+    // setIndex(index + 1);
+    // console.log(index);
   }
   return (
     <>
       <h1>Counter</h1>
-      <p>{index}</p> <button onClick={handleClick}>Add One</button>
+      <p>{index}</p> <button onClick={() => handleClick()}>Add One</button>
     </>
   );
 }
