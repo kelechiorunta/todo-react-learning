@@ -9,7 +9,7 @@
  *
  */
 
-import React from "react";
+import React, {useState} from "react";
 
 interface StudentType {
   name: string;
@@ -20,21 +20,32 @@ interface StudentType {
 const students: StudentType[] = [
   { name: "Tega", course: "React", level: "intermediate" },
 ];
+//const students = [{ name: "Tega", course: "React", level: "intermediate" }];
 
 export default function Students() {
+  const [students, setStudent]  = useState([{name: "",
+    course: "",
+    level: ""
+  }]);
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
     //Complete the function by updating the student state variable name property
+    setStudent({...students, [e.target.name ]: e.target.value})
   };
   const handleCourseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    
     //Complete the function by updating the student state variable course property
+    setStudent({...students, [e.target.name]: e.target.value})
   };
   const handleLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     //Complete the function by updating the student state variable level property
+    setStudent({...students, [e.target.name]: e.target.value})
   };
 
   const addStudent = () => {
     //Update the student state variable(which is an array of students) with a new student
     //using the spread syntax.
+    setStudent(...students, students.push({name: students[].name, course: students[].course, level[]:students.level}))
   };
   return (
     <div>
