@@ -23,10 +23,11 @@ const students: StudentType[] = [
 //const students = [{ name: "Tega", course: "React", level: "intermediate" }];
 
 export default function Students() {
-  const [students, setStudent]  = useState([{name: "",
+  const [students, setStudent]  = useState({name: "",
     course: "",
     level: ""
-  }]);
+  });
+  const [allStudent, setAllStudents] = useState(students)
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
     //Complete the function by updating the student state variable name property
