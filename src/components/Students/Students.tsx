@@ -23,7 +23,7 @@ const students: StudentType[] = [
 //const students = [{ name: "Tega", course: "React", level: "intermediate" }];
 
 export default function Students() {
-  const [students, setStudent]  = useState([{name: "",
+  const [student, setStudent]  = useState({name: "",
     course: "",
     level: ""
   }]);
