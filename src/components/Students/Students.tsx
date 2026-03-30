@@ -46,13 +46,13 @@ export default function Students() {
   const addStudent = () => {
     //Update the student state variable(which is an array of students) with a new student
     //using the spread syntax.
-     const nameElement = document.querySelector('select[name="name"]');
-     const courseElement =  document.querySelector('select[name="course"]');
-     const levelElement =  document.querySelector('select[name="level"]');
-     document.querySelector('select[name="course"]');
-    setStudent(...students, students.push({name: nameElement.value(), course: courseElement.value(), level[]:students.levelElement.value()}))
+    //  const nameElement = document.querySelector('select[name="name"]');
+    //  const courseElement =  document.querySelector('select[name="course"]');
+    //  const levelElement =  document.querySelector('select[name="level"]');
+    //  document.querySelector('select[name="course"]');
+setAllStudents([...allStudents, student])
   };
-  return (
+  // return (
     <div>
       <h1>Students</h1>
       <div>
