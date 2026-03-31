@@ -27,7 +27,7 @@ export default function Students() {
     course: "",
     level: ""
   });
-  const [allStudents, setAllStudents] = useState([student])
+  const [allStudents, setAllStudents] = useState(students)
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
     //Complete the function by updating the student state variable name property
