@@ -9,7 +9,7 @@
  *
  */
 
-import React from "react";
+import React, {useState} from "react";
 
 interface StudentType {
   name: string;
@@ -20,21 +20,37 @@ interface StudentType {
 const students: StudentType[] = [
   { name: "Tega", course: "React", level: "intermediate" },
 ];
+//const students = [{ name: "Tega", course: "React", level: "intermediate" }];
 
 export default function Students() {
+  const [student, setStudent]  = useState({name: "",
+    course: "",
+    level: ""
+  });
+  const [allStudents, setAllStudents] = useState([student])
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
     //Complete the function by updating the student state variable name property
+    setStudent({...student, [e.target.name ]: e.target.value})
   };
   const handleCourseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    
     //Complete the function by updating the student state variable course property
+    setStudent({...student, [e.target.name]: e.target.value})
   };
   const handleLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     //Complete the function by updating the student state variable level property
+    setStudent({...student, [e.target.name]: e.target.value})
   };
 
   const addStudent = () => {
     //Update the student state variable(which is an array of students) with a new student
     //using the spread syntax.
+    //  const nameElement = document.querySelector('select[name="name"]');
+    //  const courseElement =  document.querySelector('select[name="course"]');
+    //  const levelElement =  document.querySelector('select[name="level"]');
+    //  document.querySelector('select[name="course"]');
+setAllStudents([...allStudents, student])
   };
   return (
     <div>
@@ -68,7 +84,7 @@ export default function Students() {
         </label>
       </div>
       {/* Uncomment this and complete the mapping of the students */}
-      {/* <ul>
+      <ul>
         {allStudents.map((s: StudentType) => (
           <>
             <li>{s.name}</li>
@@ -76,7 +92,7 @@ export default function Students() {
             <li>{s.level}</li>
           </>
         ))}
-      </ul> */}
+      </ul>
       <button onClick={() => addStudent()}>Add Student</button>
     </div>
   );
