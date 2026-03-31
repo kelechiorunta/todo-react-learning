@@ -23,28 +23,24 @@ const students: StudentType[] = [
 //const students = [{ name: "Tega", course: "React", level: "intermediate" }];
 
 export default function Students() {
-<<<<<<< HEAD
-  const [students, setStudent]  = useState({name: "",
-=======
   const [student, setStudent]  = useState({name: "",
->>>>>>> 346c705be284db511dcfe1324ed908a1e46b0d09
     course: "",
     level: ""
   });
-  const [allStudent, setAllStudents] = useState(students)
+  const [allStudents, setAllStudents] = useState([student])
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
     //Complete the function by updating the student state variable name property
-    setStudent({...students, [e.target.name ]: e.target.value})
+    setStudent({...student, [e.target.name ]: e.target.value})
   };
   const handleCourseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     
     //Complete the function by updating the student state variable course property
-    setStudent({...students, [e.target.name]: e.target.value})
+    setStudent({...student, [e.target.name]: e.target.value})
   };
   const handleLevelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     //Complete the function by updating the student state variable level property
-    setStudent({...students, [e.target.name]: e.target.value})
+    setStudent({...student, [e.target.name]: e.target.value})
   };
 
   const addStudent = () => {
@@ -56,7 +52,7 @@ export default function Students() {
     //  document.querySelector('select[name="course"]');
 setAllStudents([...allStudents, student])
   };
-  // return (
+  return (
     <div>
       <h1>Students</h1>
       <div>
@@ -88,7 +84,7 @@ setAllStudents([...allStudents, student])
         </label>
       </div>
       {/* Uncomment this and complete the mapping of the students */}
-      {/* <ul>
+      <ul>
         {allStudents.map((s: StudentType) => (
           <>
             <li>{s.name}</li>
@@ -96,7 +92,7 @@ setAllStudents([...allStudents, student])
             <li>{s.level}</li>
           </>
         ))}
-      </ul> */}
+      </ul>
       <button onClick={() => addStudent()}>Add Student</button>
     </div>
   );
