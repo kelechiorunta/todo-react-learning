@@ -4,14 +4,16 @@ import "./App.css";
 import Task2 from "./components/Counter/Task2";
 import Profile from "./components/Profile/Profile";
 import Todo from "./components/Todo/Todo";
+import { SimpleInterest } from "./components/SimpleInterest";
 
 
 function App() {
   return (
     <>
-      <Task2 />
+      {/* <Task2 />
       <Todo />
-      <Profile />
+      <Profile /> */}
+      <SimpleInterest />
     </>
   );
 }
